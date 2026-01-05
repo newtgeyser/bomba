@@ -1,0 +1,245 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0e14;
+  --panel: #121829;
+  --text: #e7eaf2;
+  --muted: #9aa4b2;
+  --accent: #4f8cff;
+  --border: #263049;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.panel h1,
+.panel h2,
+.panel h3 {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+button,
+input,
+select {
+  background: #0f1526;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: color-mix(in oklab, var(--accent), var(--border) 30%);
+  background: color-mix(in oklab, var(--accent), #000 75%);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #070a10;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+}
+
+.list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.chat {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  min-height: 280px;
+}
+
+.chatlog {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  overflow: auto;
+  background: #0a0f1d;
+}
+
+.chatlog pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--muted);
+}
+
+/* Game HUD styles */
+.game-hud {
+  max-height: 660px;
+  overflow-y: auto;
+}
+
+.my-stats {
+  background: #0a0f1d;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 16px;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.stat {
+  font-weight: 600;
+  cursor: help;
+}
+
+.disease-warning {
+  color: #9b59b6;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.controls-hint {
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+/* Scoreboard item styles */
+.list .item.me {
+  background: rgba(79, 140, 255, 0.15);
+  border-color: var(--accent);
+}
+
+.list .item.following {
+  border-color: rgba(79, 140, 255, 0.6);
+}
+
+.status {
+  font-size: 10px;
+}
+
+.status.alive {
+  color: #2ecc71;
+}
+
+.status.dead {
+  color: #95a5a6;
+}
+
+.gold-badge {
+  font-size: 12px;
+}
+
+.player-stats-mini {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Settings panel */
+.settings-section {
+  margin-bottom: 16px;
+}
+
+.settings-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.keybind-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.keybind-row:last-child {
+  border-bottom: none;
+}
+
+.keybind-key {
+  background: #1a2236;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+/* Taunts */
+.taunt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.taunt-btn {
+  padding: 6px;
+  font-size: 11px;
+  text-align: center;
+}
